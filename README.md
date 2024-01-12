@@ -112,10 +112,6 @@ If everything is working correctly,
 then the command should have no output.
 This means that you are passing all the tests.
 
-> **NOTE:**
-> On all your assignments in this class,
-> you will lose 1 point for each test case that is not passing.
-
 ### Running the linter
 
 A *linter* is a program that enforces style constraints on code.
@@ -123,9 +119,9 @@ When many programmers collaborate on a project,
 it becomes much easier if they all use the same style.
 
 For example, how to name variables is a common style issue.
-Some programmers use what's called camel case to name variables.
-For example, `thisVariableIsCamelCase` because the capital letters are the "humps" of the camel.
-Python, however, is a snake, so python programmers use snake case:
+Some programmers use what's called [camel case](https://en.wikipedia.org/wiki/Camel_case) to name variables:
+`thisVariableIsCamelCase` because the capital letters look like the "humps" of a camel.
+Python, however, is a snake, so python programmers traditionally use [snake case](https://en.wikipedia.org/wiki/Snake_case):
 `this_variable_is_snake_case` because the underscores are "snakes" connecting the letters.
 It's not technically wrong to use camel case in your python code,
 but it makes it harder for other programmers to understand your code.
@@ -133,11 +129,11 @@ but it makes it harder for other programmers to understand your code.
 Python has a large set of these style rules that "true" python programmers follow.
 These rules are codified in [PEP8](https://www.python.org/dev/peps/pep-0008/),
 which was introduced by Python's [Benevolent Dictator For Life (BDFL)](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life) [Guido van Rossum](https://gvanrossum.github.io/).
-PEP stands for Python Enhancement Proposal, and it's the 8th such proposal that's been accepted.
-There are currently [hundreds of PEPs](https://www.python.org/dev/peps/) that address different aspects of python.
+PEP stands for Python Enhancement Proposal, and PEP8 is the 8th such proposal that's been accepted.
+There are currently [thousands of PEPs](https://www.python.org/dev/peps/) that address different aspects of python.
 It is common for people to talk about PEP8, so you must know what that is, but you don't need to know any of the others.
 
-In this class, we will be enforcing that all of your code satisfies PEP8 using a python linter called `flake`.
+In this class, we will be enforcing that all of your python code satisfies PEP8 using a python linter called [flake8](https://flake8.pycqa.org/en/latest/).
 To lint your program, type the command
 ```
 $ flake8 Fixme.py
@@ -153,6 +149,7 @@ which tells you all of the linting errors your code has.
 Fix your code so that `flake8` reports no linting errors on your code.
 
 > **NOTE:**
+>
 > If you get an error message that ends in
 > ```
 > BlockingIOError: [Errno 11] Resource temporarily unavailable
@@ -163,9 +160,10 @@ Fix your code so that `flake8` reports no linting errors on your code.
 > ```
 
 > **NOTE:**
+>
 > The CI tests first run the linter, then run the doctests.
 > If the linter fails, then no doctests will run, and you will get a 0 on your assignment.
-> You should infer from this that learning good pythonic programming style is a very important part of your grade in this class.
+> You should infer from this that writing code with good style is very important.
 
 ### Using CI
 
@@ -176,10 +174,10 @@ $ git add Fixme.py
 $ git commit
 $ git push origin master
 ```
-As soon as you run the push command, github will automatically start running your code against 4 different versions of python (versions 3.6, 3.7, 3.8, and 3.9).
+As soon as you run the push command, github will automatically start running your code against 3 different versions of python (versions 3.7, 3.8, and 3.9).
 Click the "actions" button at the top of your forked project webpage to see the results.
 
-You should see 4 green "builds" indicating that your program passed all test cases for each python version tested.
+You should see 3 green "builds" indicating that your program passed all test cases for each python version tested.
 If you see any red builds, then something went wrong, and you need to fix that problem before continuing.
 
 ### The CI badge
@@ -207,8 +205,12 @@ Now view your forked repo in your web browser.
 You should see a green badge instead of a red badge if you made all of the changes correctly.
 
 > **NOTE:**
+>
 > Whenever the grader sees a green badge on your homework submissions,
 > it guarantees full credit on the assignment.
+>
+> If you do not have a green badge, you can expect to lose at least half the points of the assignment.
+> There will be very little partial credit given.
 
 ## Submission
 
@@ -220,9 +222,6 @@ https://github.com/mikeizbicki/continuous-integration
 but with your github username instead of mine.
 
 > **IMPORTANT:**
+>
 > It is not enough in this class to simply push your final code onto github.
 > The grader will not know to grade your code unless you also submit it into sakai.
-
-<!--
-Linus Torvalds was here
--->
